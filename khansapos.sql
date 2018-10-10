@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 09, 2018 at 06:25 AM
+-- Generation Time: Oct 10, 2018 at 11:48 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -27,6 +27,25 @@ USE `khansapos`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `goods`
+--
+
+DROP TABLE IF EXISTS `goods`;
+CREATE TABLE IF NOT EXISTS `goods` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `secure_id` varchar(256) NOT NULL,
+  `name` varchar(256) NOT NULL,
+  `price` int(11) NOT NULL,
+  `stock` int(11) NOT NULL,
+  `available` int(11) NOT NULL,
+  `created_at` varchar(256) NOT NULL,
+  `updated_at` varchar(256) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -40,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created_at` varchar(256) DEFAULT NULL,
   `updated_at` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
