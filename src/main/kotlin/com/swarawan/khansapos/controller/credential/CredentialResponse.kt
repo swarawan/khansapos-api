@@ -1,8 +1,15 @@
 package com.swarawan.khansapos.controller.credential
 
+import io.swagger.annotations.ApiModelProperty
+
 /**
  * Created by rioswarawan on 10/5/18.
  */
-data class CredentialResponse(var secureId: String? = null,
+data class CredentialResponse(@ApiModelProperty(example = "319114ac-3f73-49fe-96f5-d2f7e5e52d7f", dataType = "String", required = true, position = 0)
+                              var secureId: String? = null,
+
+                              @ApiModelProperty(example = "Rio Swarawan", dataType = "String", required = true, position = 1)
                               var name: String? = null,
+
+                              @ApiModelProperty(example = "swarawan.rio@gmail.com", dataType = "String", required = true, position = 2)
                               var email: String? = null)

@@ -1,0 +1,8 @@
+{
+  "status": "NOT_FOUND",
+  "data": null,
+  "error": {
+    "message": "Not Found",
+    "code": 404
+  }
+}
