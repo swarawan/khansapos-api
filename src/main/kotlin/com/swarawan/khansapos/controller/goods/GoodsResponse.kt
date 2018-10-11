@@ -1,4 +1,4 @@
-package com.swarawan.khansapos.api.goods
+package com.swarawan.khansapos.controller.goods
 
 data class GoodsResponse(var secureId: String? = null,
                          var name: String? = null,

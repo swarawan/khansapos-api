@@ -1,4 +1,4 @@
-package com.swarawan.khansapos.api.goods
+package com.swarawan.khansapos.controller.goods
 
 import com.swarawan.khansapos.entity.Goods
 import org.springframework.data.jpa.repository.JpaRepository

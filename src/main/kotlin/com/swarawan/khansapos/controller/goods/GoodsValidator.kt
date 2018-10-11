@@ -1,4 +1,4 @@
-package com.swarawan.khansapos.api.goods
+package com.swarawan.khansapos.controller.goods
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.MessageSource

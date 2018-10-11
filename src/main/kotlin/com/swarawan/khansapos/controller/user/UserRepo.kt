@@ -1,4 +1,4 @@
-package com.swarawan.khansapos.api.user
+package com.swarawan.khansapos.controller.user
 
 import com.swarawan.khansapos.entity.User
 import org.springframework.data.jpa.repository.JpaRepository

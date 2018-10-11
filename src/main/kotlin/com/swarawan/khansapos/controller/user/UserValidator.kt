@@ -1,4 +1,4 @@
-package com.swarawan.khansapos.api.credential
+package com.swarawan.khansapos.controller.user
 
 import com.swarawan.khansapos.ext.isEmailValid
 import com.swarawan.khansapos.ext.isNameValid
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component
  */
 
 @Component
-class CredentialValidator {
+class UserValidator {
 
     @Autowired
     lateinit var messageSource: MessageSource
@@ -33,23 +33,24 @@ class CredentialValidator {
         messageSource.getMessage("error.password.match", null, LocaleContextHolder.getLocale())
     }
 
-    fun validateRegisterForm(user: CredentialRequest.Register): String {
+//    fun validateRegisterForm(user: UserRequest): String {
+//        return when {
+//            user.name.isNullOrEmpty() -> String.format(errorFieldRequired, "Name")
+//            user.email.isNullOrEmpty() -> String.format(errorFieldRequired, "Email")
+//            user.password.isNullOrEmpty() -> String.format(errorFieldRequired, "Password")
+//            !user.name.isNameValid() -> String.format(errorName, "Name")
+//            !user.email.isEmailValid() -> String.format(errorEmail, "Email")
+//            !user.password.equals(user.confirmation) -> errorPasswordNotMatch
+//            else -> ""
+//        }
+//    }
+
+    fun validateDataForm(user: UserRequest): String {
         return when {
             user.name.isEmpty() -> String.format(errorFieldRequired, "Name")
             user.email.isEmpty() -> String.format(errorFieldRequired, "Email")
-            user.password.isEmpty() -> String.format(errorFieldRequired, "Password")
             !user.name.isNameValid() -> String.format(errorName, "Name")
-            !user.email.isEmailValid() -> String.format(errorEmail, "Email")
-            !user.password.equals(user.confirmation, true) -> errorPasswordNotMatch
-            else -> ""
-        }
-    }
-
-    fun validateLoginForm(user: CredentialRequest.Login): String {
-        return when {
-            user.email.isEmpty() -> String.format(errorFieldRequired, "Email")
             !user.email.isEmailValid() -> String.format(errorName, "Email")
-            user.password.isEmpty() -> String.format(errorFieldRequired, "Password")
             else -> ""
         }
     }

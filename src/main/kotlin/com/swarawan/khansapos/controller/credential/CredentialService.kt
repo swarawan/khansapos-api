@@ -1,4 +1,4 @@
-package com.swarawan.khansapos.api.credential
+package com.swarawan.khansapos.controller.credential
 
 import com.swarawan.khansapos.entity.User
 import com.swarawan.khansapos.exception.AppException

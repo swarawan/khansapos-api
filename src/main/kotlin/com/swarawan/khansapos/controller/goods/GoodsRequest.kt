@@ -1,4 +1,4 @@
-package com.swarawan.khansapos.api.goods
+package com.swarawan.khansapos.controller.goods
 
 data class GoodsRequest(val name: String? = null,
                         val price: Int? = 0,

@@ -1,4 +1,4 @@
-package com.swarawan.khansapos.api.goods
+package com.swarawan.khansapos.controller.goods
 
 import com.swarawan.khansapos.entity.Goods
 import com.swarawan.khansapos.exception.AppException
@@ -17,7 +17,13 @@ class GoodsService {
     @Autowired
     lateinit var goodsValidator: GoodsValidator
 
-    fun getAllGoods(): MutableList<Goods> = goodsRepo.findAll()
+    fun getAllGoods(): MutableList<GoodsResponse> {
+        val goods = mutableListOf<GoodsResponse>()
+        goodsRepo.findAll().forEach {
+            goods.add(GoodsResponse(it.secureId, it.name, it.price, it.stock, it.available))
+        }
+        return goods
+    }
 
     fun getOne(secureId: String): GoodsResponse {
         val goods = goodsRepo.findBySecureId(secureId)

@@ -1,4 +1,4 @@
-package com.swarawan.khansapos.api.credential
+package com.swarawan.khansapos.controller.credential
 
 /**
  * Created by rioswarawan on 10/5/18.

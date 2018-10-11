@@ -1,4 +1,4 @@
-package com.swarawan.khansapos.api.user
+package com.swarawan.khansapos.controller.user
 
 import com.swarawan.khansapos.entity.User
 import com.swarawan.khansapos.exception.AppException
@@ -17,26 +17,18 @@ class UserService {
     @Autowired
     lateinit var userValidator: UserValidator
 
-    fun getAllUser(): MutableList<User> = userRepo.findAll()
+    fun getAllUser(): MutableList<UserResponse> {
+        val users = mutableListOf<UserResponse>()
+        userRepo.findAll().forEach {
+            users.add(UserResponse(it.secureId, it.name, it.email))
+        }
+        return users
+    }
 
     fun getOne(secureId: String): UserResponse {
         val user = userRepo.findBySecureId(secureId)
         return UserResponse(user.secureId, user.name, user.email)
     }
-
-//    fun addUser(request: UserRequest): UserResponse {
-//        val message = userValidator.validateRegisterForm(request)
-//        if (message.isNotEmpty()) throw AppException(errorMessage = message, code = HttpStatus.BAD_REQUEST)
-//
-//        val newUser = userRepo.save(User(
-//                secureId = UUID.randomUUID().toString(),
-//                name = request.name,
-//                email = request.email,
-//                password = request.password?.encrypt()))
-//        return UserResponse(newUser.secureId,
-//                newUser.name,
-//                newUser.email)
-//    }
 
     fun updateUser(secureId: String, request: UserRequest): UserResponse {
         val message = userValidator.validateDataForm(request)

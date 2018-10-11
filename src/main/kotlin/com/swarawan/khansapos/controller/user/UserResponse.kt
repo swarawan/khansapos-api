@@ -1,4 +1,4 @@
-package com.swarawan.khansapos.api.user
+package com.swarawan.khansapos.controller.user
 
 /**
  * Created by rioswarawan on 10/5/18.
